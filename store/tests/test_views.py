@@ -5,13 +5,13 @@ from re import S
 from unicodedata import category, name
 from unittest import skip
 from urllib import request, response
-from django.http import HttpRequest
 
 from django.contrib.auth.models import User
-from store.models import Category, Product
+from django.http import HttpRequest
+from django.test import Client, RequestFactory, TestCase
 from django.urls import reverse
-from django.test import Client, TestCase, RequestFactory
 
+from store.models import Category, Product
 from store.views import all_products
 
 # @skip('demonstarting skipping')
@@ -31,7 +31,7 @@ class TestViewResponse(TestCase):
 
     def test_url_allowed_hosts(self):
         response = self.c.get('/')
-        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response.status_code, 200)
 
     def test_product_detail_url(self):
         response = self.c.get(reverse('store:product_detail', args=['django-beginers']))

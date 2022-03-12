@@ -1,10 +1,10 @@
 from tkinter.tix import Tree
 from turtle import title
 from unicodedata import category
-from django.db import models
-from django.contrib.auth.models import User
-from django.urls import reverse
 
+from django.contrib.auth.models import User
+from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 

@@ -1,10 +1,10 @@
-from django.shortcuts import get_object_or_404, render
-
 import http
 from itertools import product
-from django.shortcuts import render
-from .models import Category, Product
+
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+
+from .models import Category, Product
 
 
 def categories(request):
